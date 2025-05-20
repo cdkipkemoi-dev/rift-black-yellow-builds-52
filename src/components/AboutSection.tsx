@@ -21,14 +21,14 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1788" 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="RiftWorkmanship Team" 
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
             {/* Experience Badge */}
             <div className="absolute -bottom-10 -right-10 bg-riftyellow text-riftblack p-6 rounded-lg shadow-lg">
-              <div className="text-5xl font-bold">15+</div>
+              <div className="text-5xl font-bold">5+</div>
               <div className="text-lg font-medium">Years Experience</div>
             </div>
           </div>
