@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   const features = [
@@ -63,8 +64,8 @@ const AboutSection = () => {
               ))}
             </div>
             
-            <Button className="btn-primary">
-              Learn More About Us
+            <Button className="btn-primary" asChild>
+              <Link to="/about">Learn More About Us</Link>
             </Button>
           </div>
         </div>
