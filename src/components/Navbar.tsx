@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <span className="font-heading text-2xl font-extrabold">
+            <span className="font-heading text-2xl font-extrabold animate-fade-in">
               <span className="text-riftblack">Rift</span>
               <span className="text-riftyellow">Workmanship</span>
             </span>
@@ -58,14 +58,14 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className="text-gray-800 hover:text-riftyellow font-medium transition-colors"
+                className="text-gray-800 hover:text-riftyellow font-medium transition-colors hover:scale-105 transition-transform duration-200"
               >
                 {link.name}
               </Link>
             ))}
           </div>
-          <Button className="bg-riftyellow text-riftblack hover:bg-amber-400 font-bold">
-            Get a Quote
+          <Button className="bg-riftyellow text-riftblack hover:bg-amber-400 font-bold hover:scale-105 transition-transform duration-200" asChild>
+            <Link to="/contact">Get a Quote</Link>
           </Button>
         </div>
 
@@ -98,8 +98,8 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-riftyellow text-riftblack hover:bg-amber-400 font-bold w-full">
-              Get a Quote
+            <Button className="bg-riftyellow text-riftblack hover:bg-amber-400 font-bold w-full" asChild>
+              <Link to="/contact">Get a Quote</Link>
             </Button>
           </div>
         </div>
