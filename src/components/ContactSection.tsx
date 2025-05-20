@@ -30,8 +30,12 @@ const ContactSection = () => {
     setTimeout(() => {
       toast({
         title: "Message Sent!",
-        description: "We've received your message and will get back to you soon.",
-        icon: <Check className="h-4 w-4" />,
+        description: (
+          <div className="flex items-center">
+            <Check className="h-4 w-4 mr-2" />
+            We've received your message and will get back to you soon.
+          </div>
+        ),
       });
       setFormState({
         name: "",
