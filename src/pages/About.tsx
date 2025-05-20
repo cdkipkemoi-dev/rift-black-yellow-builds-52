@@ -1,8 +1,8 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Award, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const values = [
@@ -66,30 +66,30 @@ const About = () => {
                 </p>
                 
                 <div className="flex items-center">
-                  <Button className="btn-primary">
-                    Our Services
+                  <Button className="btn-primary" asChild>
+                    <Link to="/services">Our Services</Link>
                   </Button>
                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=2066" 
+                  src="https://images.unsplash.com/photo-1465379944081-7f47de8d74ac" 
                   alt="RiftWorkmanship History" 
                   className="rounded-lg shadow-md h-64 object-cover w-full"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?q=80&w=2070" 
+                  src="https://images.unsplash.com/photo-1485833077593-4278bba3f11f" 
                   alt="RiftWorkmanship Projects" 
                   className="rounded-lg shadow-md h-64 object-cover w-full mt-8"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070" 
+                  src="https://images.unsplash.com/photo-1493962853295-0fd70327578a" 
                   alt="RiftWorkmanship Team" 
                   className="rounded-lg shadow-md h-64 object-cover w-full"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1541976590-125431b923de?q=80&w=2070" 
+                  src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
                   alt="RiftWorkmanship Services" 
                   className="rounded-lg shadow-md h-64 object-cover w-full mt-8"
                 />
@@ -189,7 +189,7 @@ const About = () => {
               {/* Team Member 1 */}
               <div className="bg-white rounded-lg overflow-hidden shadow-md hover-card-rise">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2149" 
+                  src="https://images.unsplash.com/photo-1507152832244-10d45c7eda57?q=80&w=1974&auto=format&fit=crop" 
                   alt="CEO" 
                   className="w-full h-64 object-cover object-center"
                 />
@@ -205,7 +205,7 @@ const About = () => {
               {/* Team Member 2 */}
               <div className="bg-white rounded-lg overflow-hidden shadow-md hover-card-rise">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2076" 
+                  src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop" 
                   alt="Operations Director" 
                   className="w-full h-64 object-cover object-center"
                 />
@@ -221,7 +221,7 @@ const About = () => {
               {/* Team Member 3 */}
               <div className="bg-white rounded-lg overflow-hidden shadow-md hover-card-rise">
                 <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070" 
+                  src="https://images.unsplash.com/photo-1506277886164-e25976267a10?q=80&w=2070&auto=format&fit=crop" 
                   alt="Chief Architect" 
                   className="w-full h-64 object-cover object-center"
                 />
@@ -237,7 +237,7 @@ const About = () => {
               {/* Team Member 4 */}
               <div className="bg-white rounded-lg overflow-hidden shadow-md hover-card-rise">
                 <img 
-                  src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=2154" 
+                  src="https://images.unsplash.com/photo-1539701938214-0d9736e1c16b?q=80&w=1974&auto=format&fit=crop" 
                   alt="Project Manager" 
                   className="w-full h-64 object-cover object-center"
                 />
@@ -263,8 +263,8 @@ const About = () => {
               Contact us today to discuss your project needs and discover how RiftWorkmanship 
               can bring your vision to life.
             </p>
-            <Button className="btn-primary text-lg py-6 px-8">
-              Contact Us Now
+            <Button className="btn-primary text-lg py-6 px-8" asChild>
+              <Link to="/contact">Contact Us Now</Link>
             </Button>
           </div>
         </section>
