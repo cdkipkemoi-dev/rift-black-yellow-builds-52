@@ -1,27 +1,41 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Award, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const About = () => {
+  const [expandedValue, setExpandedValue] = useState(null);
+  
   const values = [
     {
+      id: 1,
       icon: <Award className="h-10 w-10 text-riftyellow" />,
       title: "Excellence",
-      description: "We strive for excellence in every aspect of our work, from planning to execution."
+      description: "We strive for excellence in every aspect of our work, from planning to execution.",
+      extendedDescription: "Excellence is not just a goal but a standard we uphold daily. Our team continuously refines their skills, stays updated with industry advancements, and implements best practices to deliver work that exceeds expectations."
     },
     {
+      id: 2,
       icon: <Users className="h-10 w-10 text-riftyellow" />,
       title: "Integrity",
-      description: "We uphold the highest standards of honesty and ethical conduct in all our dealings."
+      description: "We uphold the highest standards of honesty and ethical conduct in all our dealings.",
+      extendedDescription: "Integrity forms the foundation of our business relationships. We maintain transparency in our processes, provide honest assessments of projects, and ensure that our actions align with our commitments to clients, partners, and regulatory standards."
     },
     {
+      id: 3,
       icon: <Clock className="h-10 w-10 text-riftyellow" />,
       title: "Timeliness",
-      description: "We respect deadlines and deliver projects on schedule without compromising quality."
+      description: "We respect deadlines and deliver projects on schedule without compromising quality.",
+      extendedDescription: "Timeliness is crucial in construction. Our systematic project management approach includes detailed scheduling, regular progress monitoring, and proactive problem-solving to ensure we complete every project within the agreed timeframe while maintaining our quality standards."
     }
   ];
+
+  const toggleExpand = (id) => {
+    setExpandedValue(expandedValue === id ? null : id);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -32,7 +46,7 @@ const About = () => {
         <div className="relative h-80 md:h-96">
           <div 
             className="absolute inset-0 bg-cover bg-center" 
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=2071')" }}
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070')" }}
           ></div>
           <div className="absolute inset-0 bg-riftblack/70"></div>
           <div className="relative z-10 container-custom h-full flex flex-col justify-center">
@@ -74,23 +88,23 @@ const About = () => {
               
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1465379944081-7f47de8d74ac" 
-                  alt="RiftWorkmanship History" 
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070" 
+                  alt="RiftWorkmanship Office Building" 
                   className="rounded-lg shadow-md h-64 object-cover w-full"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1485833077593-4278bba3f11f" 
-                  alt="RiftWorkmanship Projects" 
+                  src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb73?q=80&w=2070" 
+                  alt="RiftWorkmanship Construction Team" 
                   className="rounded-lg shadow-md h-64 object-cover w-full mt-8"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1493962853295-0fd70327578a" 
-                  alt="RiftWorkmanship Team" 
+                  src="https://images.unsplash.com/photo-1541976590-125431b923de?q=80&w=2070" 
+                  alt="RiftWorkmanship Construction Site" 
                   className="rounded-lg shadow-md h-64 object-cover w-full"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
-                  alt="RiftWorkmanship Services" 
+                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070" 
+                  alt="RiftWorkmanship Equipment" 
                   className="rounded-lg shadow-md h-64 object-cover w-full mt-8"
                 />
               </div>
@@ -162,11 +176,25 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {values.map((value, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-lg shadow-md text-center">
+              {values.map((value) => (
+                <div key={value.id} className="bg-gray-50 p-8 rounded-lg shadow-md text-center">
                   <div className="flex justify-center mb-6">{value.icon}</div>
                   <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
+                  <p className="text-gray-600 mb-4">{value.description}</p>
+                  
+                  <Button 
+                    variant="link" 
+                    className="text-riftyellow hover:text-amber-600 mt-2"
+                    onClick={() => toggleExpand(value.id)}
+                  >
+                    {expandedValue === value.id ? "Show Less" : "Learn More"}
+                  </Button>
+                  
+                  {expandedValue === value.id && (
+                    <div className="mt-4 pt-4 border-t border-gray-200 animate-fade-in">
+                      <p className="text-gray-600">{value.extendedDescription}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

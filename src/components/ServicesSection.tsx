@@ -5,42 +5,59 @@ import {
   PaintBucket, 
   Layers, 
   TreePine, 
-  Home 
+  Home,
+  ChevronDown,
+  ChevronUp 
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Button } from "@/components/ui/button";
 
 const ServicesSection = () => {
+  const [expandedServiceId, setExpandedServiceId] = useState(null);
+  
   const services = [
     {
+      id: 1,
       icon: <Building className="h-12 w-12 text-riftyellow" />,
       title: "Project Management",
-      description: "Professional oversight of construction projects from inception to completion, ensuring timely delivery, budget adherence, and quality control."
+      description: "Professional oversight of construction projects from inception to completion, ensuring timely delivery, budget adherence, and quality control.",
+      expandedDescription: "Our experienced project managers coordinate all aspects of construction, from planning and scheduling to resource allocation and quality assurance. We provide detailed progress reports and serve as your single point of contact throughout the project."
     },
     {
+      id: 2,
       icon: <Home className="h-12 w-12 text-riftyellow" />,
       title: "Residential Construction",
-      description: "Building beautiful, functional homes with precision and attention to detail, creating living spaces that reflect your lifestyle and preferences."
+      description: "Building beautiful, functional homes with precision and attention to detail, creating living spaces that reflect your lifestyle and preferences.",
+      expandedDescription: "Whether it's a custom luxury home or a multi-unit residential complex, our team brings expertise to every stage of home building. We prioritize quality materials, energy efficiency, and timeless design in all our residential projects."
     },
     {
+      id: 3,
       icon: <Building className="h-12 w-12 text-riftyellow" />,
       title: "Commercial Construction",
-      description: "Creating efficient, impressive commercial spaces designed to enhance business operations and make a lasting impression on clients and customers."
+      description: "Creating efficient, impressive commercial spaces designed to enhance business operations and make a lasting impression on clients and customers.",
+      expandedDescription: "From office buildings to retail centers, our commercial construction services focus on functionality, durability, and visual impact. We understand the unique requirements of business environments and design spaces that support productivity and growth."
     },
     {
+      id: 4,
       icon: <Hammer className="h-12 w-12 text-riftyellow" />,
       title: "Renovation & Remodeling",
-      description: "Transforming existing structures with innovative designs and quality craftsmanship to breathe new life into your space."
+      description: "Transforming existing structures with innovative designs and quality craftsmanship to breathe new life into your space.",
+      expandedDescription: "Our renovation experts combine creativity with technical skill to update and improve existing buildings. Whether it's a historic restoration, modern upgrade, or complete transformation, we handle projects with minimal disruption and maximum attention to detail."
     },
     {
+      id: 5,
       icon: <TreePine className="h-12 w-12 text-riftyellow" />,
       title: "Landscaping",
-      description: "Designing and implementing beautiful outdoor environments that enhance the aesthetics and functionality of your property."
+      description: "Designing and implementing beautiful outdoor environments that enhance the aesthetics and functionality of your property.",
+      expandedDescription: "Our landscaping services extend beyond plants to create complete outdoor living environments. We integrate hardscaping, water features, lighting, and sustainable practices to develop outdoor spaces that complement your property and lifestyle."
     },
     {
+      id: 6,
       icon: <Layers className="h-12 w-12 text-riftyellow" />,
       title: "Architectural & Structural Design",
-      description: "Expert design services that blend creativity with technical precision to create spaces that are both beautiful and structurally sound."
+      description: "Expert design services that blend creativity with technical precision to create spaces that are both beautiful and structurally sound.",
+      expandedDescription: "Our design team combines artistic vision with technical expertise to create buildings that are as functional as they are beautiful. We offer comprehensive design services from initial concept through detailed construction documents, supporting your project every step of the way."
     }
   ];
 
@@ -77,6 +94,10 @@ const ServicesSection = () => {
     };
   }, [services.length]);
 
+  const toggleExpand = (id) => {
+    setExpandedServiceId(expandedServiceId === id ? null : id);
+  };
+
   return (
     <section className="section-padding bg-gray-50" id="services">
       <div className="container-custom">
@@ -98,13 +119,30 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="border-none shadow-md opacity-0 transform translate-y-4"
+              className="border-none shadow-md opacity-0 transform translate-y-4 hover:shadow-lg transition-shadow duration-300"
               ref={el => cardsRef.current[index] = el}
             >
               <CardContent className="p-8">
                 <div className="mb-6">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Button 
+                  variant="link" 
+                  className="text-riftyellow p-0 hover:text-amber-600 flex items-center"
+                  onClick={() => toggleExpand(service.id)}
+                >
+                  {expandedServiceId === service.id ? (
+                    <>View Less <ChevronUp className="ml-2 h-4 w-4" /></>
+                  ) : (
+                    <>View Details <ChevronDown className="ml-2 h-4 w-4" /></>
+                  )}
+                </Button>
+                
+                {expandedServiceId === service.id && (
+                  <div className="mt-4 pt-4 border-t border-gray-200 animate-fade-in">
+                    <p className="text-gray-600">{service.expandedDescription}</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}

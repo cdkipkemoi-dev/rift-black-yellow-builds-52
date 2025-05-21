@@ -21,7 +21,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden rounded-lg">
               <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070" 
                 alt="RiftWorkmanship Team" 
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -48,7 +48,7 @@ const AboutSection = () => {
               for our unwavering commitment to quality and client satisfaction.
             </p>
             
-            <p className="text-gray-700 mb-8">
+            <p className="text-gray-700 mb-6">
               Our experienced team combines technical expertise with innovative approaches to 
               deliver exceptional results across residential, commercial, and landscaping projects. 
               From initial concept to final completion, we ensure that every detail is executed with 

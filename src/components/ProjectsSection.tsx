@@ -2,11 +2,12 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 
 const ProjectsSection = () => {
   const categories = ["All", "Residential", "Commercial", "Renovation", "Design"];
   const [activeCategory, setActiveCategory] = useState("All");
+  const [expandedProjectId, setExpandedProjectId] = useState(null);
   
   const projects = [
     {
@@ -14,48 +15,58 @@ const ProjectsSection = () => {
       title: "Luxury Villa Complex",
       category: "Residential",
       image: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070",
-      description: "A collection of high-end residential villas featuring modern architecture and premium finishes."
+      description: "A collection of high-end residential villas featuring modern architecture and premium finishes.",
+      extendedDescription: "This exclusive development includes 12 custom villas, each with unique floor plans ranging from 3 to 5 bedrooms. The project incorporated sustainable building materials, energy-efficient systems, and smart home technology throughout. Our team managed everything from site preparation to interior finishes."
     },
     {
       id: 2,
       title: "Corporate Office Building",
       category: "Commercial",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070",
-      description: "A state-of-the-art office complex designed for optimal workflow and employee comfort."
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070",
+      description: "A state-of-the-art office complex designed for optimal workflow and employee comfort.",
+      extendedDescription: "This 10-story corporate headquarters features an open-concept design with flexible workspace configurations, collaborative zones, and state-of-the-art conference facilities. The building includes sustainable features like rainwater harvesting, solar panels, and a green roof garden accessible to employees."
     },
     {
       id: 3,
       title: "Historic Home Renovation",
       category: "Renovation",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070",
-      description: "Careful restoration of a heritage property, preserving historical elements while adding modern amenities."
+      description: "Careful restoration of a heritage property, preserving historical elements while adding modern amenities.",
+      extendedDescription: "This heritage home renovation required careful preservation of original architectural features while incorporating modern systems and conveniences. We worked with conservation specialists to restore intricate woodwork, refurbish original windows, and recreate period-appropriate details while adding modern plumbing, electrical, and climate control systems."
     },
     {
       id: 4,
       title: "Garden Complex Design",
       category: "Design",
       image: "https://images.unsplash.com/photo-1558521558-037f1cb027c5?q=80&w=2070",
-      description: "Comprehensive landscape architecture for a community garden and recreational space."
+      description: "Comprehensive landscape architecture for a community garden and recreational space.",
+      extendedDescription: "This community garden project transformed an unused urban lot into a vibrant public space with raised garden beds, walking paths, seating areas, and a children's play zone. The design incorporated native plants, efficient irrigation systems, and solar lighting to create a sustainable community asset."
     },
     {
       id: 5,
       title: "Modern Apartment Building",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073",
-      description: "Contemporary multi-family housing with sustainable features and community amenities."
+      image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=2070",
+      description: "Contemporary multi-family housing with sustainable features and community amenities.",
+      extendedDescription: "This 24-unit apartment complex prioritizes community living with shared amenities including a rooftop garden, fitness center, and co-working spaces. The building utilizes passive solar design, rainwater collection, and energy-efficient systems throughout. Each unit features modern finishes, open floor plans, and private balconies."
     },
     {
       id: 6,
       title: "Shopping Center Expansion",
       category: "Commercial",
-      image: "https://images.unsplash.com/photo-1577277625082-36df4915ebeb?q=80&w=2070",
-      description: "Major expansion of an existing retail center, adding new storefronts and public spaces."
+      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=2070",
+      description: "Major expansion of an existing retail center, adding new storefronts and public spaces.",
+      extendedDescription: "This commercial project expanded an existing shopping center by 15,000 square feet, adding 12 new retail spaces and a central food court with outdoor seating. The design seamlessly integrated with the existing structure while modernizing the entire facility with updated facades, improved traffic flow, and enhanced landscaping throughout the property."
     }
   ];
   
   const filteredProjects = activeCategory === "All" 
     ? projects 
     : projects.filter(project => project.category === activeCategory);
+    
+  const toggleExpand = (id) => {
+    setExpandedProjectId(expandedProjectId === id ? null : id);
+  };
 
   return (
     <section className="section-padding bg-white" id="projects">
@@ -108,8 +119,23 @@ const ProjectsSection = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
-                <Button variant="link" className="text-riftyellow p-0 hover:text-amber-600">
-                  View Details <ArrowRight className="ml-2 h-4 w-4" />
+                
+                {expandedProjectId === project.id && (
+                  <div className="mt-4 mb-4 text-gray-700 bg-gray-50 p-4 rounded-md animate-fade-in">
+                    {project.extendedDescription}
+                  </div>
+                )}
+                
+                <Button 
+                  variant="link" 
+                  className="text-riftyellow p-0 hover:text-amber-600 flex items-center"
+                  onClick={() => toggleExpand(project.id)}
+                >
+                  {expandedProjectId === project.id ? (
+                    <>View Less <ChevronUp className="ml-2 h-4 w-4" /></>
+                  ) : (
+                    <>View Details <ChevronDown className="ml-2 h-4 w-4" /></>
+                  )}
                 </Button>
               </CardContent>
             </Card>

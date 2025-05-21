@@ -12,8 +12,11 @@ import {
   CheckCircle
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
 
 const Services = () => {
+  const [expandedServiceId, setExpandedServiceId] = useState(null);
+  
   const services = [
     {
       id: 1,
@@ -28,7 +31,8 @@ const Services = () => {
         "Regular progress reports and updates",
         "Quality assurance and control",
         "Risk assessment and mitigation"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
     },
     {
       id: 2,
@@ -43,7 +47,8 @@ const Services = () => {
         "High-quality finishes and materials",
         "Integrated technology and smart home features",
         "Comprehensive warranties on all work"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070"
     },
     {
       id: 3,
@@ -58,7 +63,8 @@ const Services = () => {
         "Industrial and warehouse construction",
         "Tenant improvements and build-outs",
         "Compliance with all commercial building codes"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=2070"
     },
     {
       id: 4,
@@ -73,7 +79,8 @@ const Services = () => {
         "Historic building restoration",
         "Structural modifications and repairs",
         "Interior and exterior upgrades"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070"
     },
     {
       id: 5,
@@ -88,7 +95,8 @@ const Services = () => {
         "Irrigation and drainage systems",
         "Outdoor living spaces and kitchens",
         "Commercial and residential landscaping"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1558521558-037f1cb027c5?q=80&w=2070"
     },
     {
       id: 6,
@@ -103,9 +111,14 @@ const Services = () => {
         "3D renderings and visualizations",
         "Permit preparation and submission",
         "Sustainable and energy-efficient design"
-      ]
+      ],
+      image: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?q=80&w=2070"
     }
   ];
+
+  const toggleExpand = (id) => {
+    setExpandedServiceId(expandedServiceId === id ? null : id);
+  };
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -175,9 +188,25 @@ const Services = () => {
                       ))}
                     </div>
                     
-                    <Button className="btn-primary">
-                      Request Quote
+                    <Button 
+                      className="btn-primary"
+                      onClick={() => toggleExpand(service.id)}
+                    >
+                      {expandedServiceId === service.id ? "Hide Details" : "Request Quote"}
                     </Button>
+                    
+                    {expandedServiceId === service.id && (
+                      <div className="mt-6 p-5 bg-gray-50 rounded-lg border border-gray-200 animate-fade-in">
+                        <h4 className="font-bold mb-3">Additional Services Include:</h4>
+                        <ul className="list-disc pl-5 space-y-2">
+                          <li>Free initial consultation and site assessment</li>
+                          <li>Detailed project proposals with transparent pricing</li>
+                          <li>Regular progress updates and site visits</li>
+                          <li>Post-completion support and maintenance advice</li>
+                          <li>Quality assurance and satisfaction guarantee</li>
+                        </ul>
+                      </div>
+                    )}
                   </div>
                   
                   <div 
@@ -186,7 +215,7 @@ const Services = () => {
                     }`}
                   >
                     <img 
-                      src={`https://source.unsplash.com/random/800x600?${service.title.toLowerCase().replace(/ & /g, ',').replace(/ /g, ',')},construction`} 
+                      src={service.image}
                       alt={service.title} 
                       className="rounded-lg shadow-lg w-full h-auto object-cover aspect-[4/3]"
                     />
