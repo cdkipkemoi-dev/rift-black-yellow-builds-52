@@ -38,7 +38,7 @@ const Hero = () => {
             </Button>
             <Button 
               variant="outline" 
-              className="w-full sm:w-auto border-riftyellow text-white hover:bg-riftyellow/10 text-base py-3 px-6"
+              className="w-full sm:w-auto border-riftyellow text-black bg-white hover:bg-gray-100 text-base py-3 px-6"
               asChild
             >
               <Link to="/contact">Contact Us</Link>

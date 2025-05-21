@@ -8,7 +8,7 @@ import {
   Home 
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const ServicesSection = () => {
   const services = [
@@ -44,40 +44,35 @@ const ServicesSection = () => {
     }
   ];
 
-  // Function to check if an element is in the viewport
-  const isElementInViewport = (el) => {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  };
-
   const cardsRef = useRef([]);
 
   useEffect(() => {
     // Initialize the refs array
     cardsRef.current = cardsRef.current.slice(0, services.length);
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in', 'animate-scale-in');
-          observer.unobserve(entry.target);
+    
+    // Set a small timeout to ensure cards are visible
+    setTimeout(() => {
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          // Remove opacity-0 and apply animations
+          card.classList.remove('opacity-0');
+          card.classList.remove('translate-y-4');
+          // Apply animations with staggered delay
+          card.style.transition = 'all 0.6s ease';
+          card.style.transitionDelay = `${index * 0.1}s`;
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0) scale(1)';
         }
       });
-    }, { threshold: 0.1 });
-
-    // Observe all card elements
-    cardsRef.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
+    }, 300);
 
     return () => {
-      cardsRef.current.forEach((card) => {
-        if (card) observer.unobserve(card);
+      // Cleanup
+      cardsRef.current.forEach(card => {
+        if (card) {
+          card.style.transition = '';
+          card.style.transitionDelay = '';
+        }
       });
     };
   }, [services.length]);
@@ -103,7 +98,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="hover-card-rise border-none shadow-md opacity-0 transform translate-y-4"
+              className="border-none shadow-md opacity-0 transform translate-y-4"
               ref={el => cardsRef.current[index] = el}
             >
               <CardContent className="p-8">
