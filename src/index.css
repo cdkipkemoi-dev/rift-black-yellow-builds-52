@@ -81,10 +81,17 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold;
   }
+  
+  /* For mobile compatibility */
+  html, body {
+    @apply overflow-x-hidden;
+    width: 100%;
+    touch-action: manipulation;
+  }
 }
 
 .section-padding {
-  @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
+  @apply py-10 md:py-16 lg:py-24 px-4 md:px-8 lg:px-16;
 }
 
 .container-custom {
@@ -92,11 +99,11 @@
 }
 
 .btn-primary {
-  @apply bg-riftyellow text-riftblack font-bold py-3 px-6 rounded-md hover:bg-amber-400 transition-colors duration-300;
+  @apply bg-riftyellow text-riftblack font-bold py-3 px-6 rounded-md hover:bg-amber-400 transition-colors duration-300 text-base sm:text-lg w-full sm:w-auto;
 }
 
 .btn-secondary {
-  @apply bg-riftblack text-white font-bold py-3 px-6 rounded-md hover:bg-gray-800 transition-colors duration-300 border border-riftyellow;
+  @apply bg-riftblack text-white font-bold py-3 px-6 rounded-md hover:bg-gray-800 transition-colors duration-300 border border-riftyellow text-base sm:text-lg w-full sm:w-auto;
 }
 
 .hover-card-rise {
@@ -109,3 +116,12 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Responsive helper classes */
+@media (max-width: 640px) {
+  .container-custom {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+

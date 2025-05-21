@@ -19,14 +19,14 @@ const Index = () => {
       <main>
         <Hero />
         <AboutSection />
-        <div className="container-custom py-8 flex justify-center">
+        <div className="container-custom py-6 sm:py-8 flex justify-center">
           <Button 
-            className="bg-white text-black border border-gray-200 shadow-md hover:bg-gray-100 font-bold py-4 px-6 rounded-md animate-scale-in flex items-center gap-2"
+            className="bg-white text-black border border-gray-200 shadow-md hover:bg-gray-100 font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-md animate-scale-in flex items-center gap-2 text-base w-full sm:w-auto"
             asChild
           >
             <Link to="/contact">
               <PhoneCall size={20} />
-              Contact Us Now
+              <span className="whitespace-nowrap">Contact Us Now</span>
             </Link>
           </Button>
         </div>

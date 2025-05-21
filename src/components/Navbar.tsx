@@ -37,14 +37,14 @@ const Navbar = () => {
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/95 shadow-md backdrop-blur-sm py-3"
-          : "bg-transparent py-5"
+          ? "bg-white/95 shadow-md backdrop-blur-sm py-2 sm:py-3"
+          : "bg-transparent py-3 sm:py-5"
       )}
     >
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <span className="font-heading text-2xl font-extrabold animate-fade-in">
+            <span className="font-heading text-xl sm:text-2xl font-extrabold animate-fade-in">
               <span className="text-riftblack">Rift</span>
               <span className="text-riftyellow">Workmanship</span>
             </span>
@@ -52,8 +52,8 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+          <div className="hidden md:flex space-x-4 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -73,7 +73,8 @@ const Navbar = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-gray-800 focus:outline-none"
+            className="text-gray-800 focus:outline-none p-2"
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -86,7 +87,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 px-6 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 px-6 animate-fade-in z-50">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <Link
@@ -98,8 +99,8 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-riftyellow text-riftblack hover:bg-amber-400 font-bold w-full" asChild>
-              <Link to="/contact">Get a Quote</Link>
+            <Button className="bg-riftyellow text-riftblack hover:bg-amber-400 font-bold w-full py-3" asChild>
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Get a Quote</Link>
             </Button>
           </div>
         </div>
