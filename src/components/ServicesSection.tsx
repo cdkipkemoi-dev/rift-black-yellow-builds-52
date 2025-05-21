@@ -8,6 +8,7 @@ import {
   Home 
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useRef, useEffect } from 'react';
 
 const ServicesSection = () => {
   const services = [
@@ -43,11 +44,49 @@ const ServicesSection = () => {
     }
   ];
 
+  // Function to check if an element is in the viewport
+  const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    // Initialize the refs array
+    cardsRef.current = cardsRef.current.slice(0, services.length);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in', 'animate-scale-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observe all card elements
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => {
+      cardsRef.current.forEach((card) => {
+        if (card) observer.unobserve(card);
+      });
+    };
+  }, [services.length]);
+
   return (
     <section className="section-padding bg-gray-50" id="services">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
           <h3 className="text-riftyellow font-bold text-lg mb-2">OUR SERVICES</h3>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Comprehensive Construction & Design Solutions
@@ -62,7 +101,11 @@ const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="hover-card-rise border-none shadow-md">
+            <Card 
+              key={index} 
+              className="hover-card-rise border-none shadow-md opacity-0 transform translate-y-4"
+              ref={el => cardsRef.current[index] = el}
+            >
               <CardContent className="p-8">
                 <div className="mb-6">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>

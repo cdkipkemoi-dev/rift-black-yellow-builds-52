@@ -48,11 +48,11 @@ const Hero = () => {
           {/* Stats - Responsive grid */}
           <div className="mt-10 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
             <div className="text-center p-3 md:p-4 bg-riftblack/60 backdrop-blur-sm rounded-lg border border-riftyellow/20">
-              <div className="text-2xl md:text-4xl font-bold text-riftyellow mb-1">15+</div>
+              <div className="text-2xl md:text-4xl font-bold text-riftyellow mb-1">5+</div>
               <div className="text-white text-xs sm:text-sm">Years Experience</div>
             </div>
             <div className="text-center p-3 md:p-4 bg-riftblack/60 backdrop-blur-sm rounded-lg border border-riftyellow/20">
-              <div className="text-2xl md:text-4xl font-bold text-riftyellow mb-1">200+</div>
+              <div className="text-2xl md:text-4xl font-bold text-riftyellow mb-1">100+</div>
               <div className="text-white text-xs sm:text-sm">Projects Completed</div>
             </div>
             <div className="text-center p-3 md:p-4 bg-riftblack/60 backdrop-blur-sm rounded-lg border border-riftyellow/20">
@@ -60,7 +60,7 @@ const Hero = () => {
               <div className="text-white text-xs sm:text-sm">Expert Employees</div>
             </div>
             <div className="text-center p-3 md:p-4 bg-riftblack/60 backdrop-blur-sm rounded-lg border border-riftyellow/20">
-              <div className="text-2xl md:text-4xl font-bold text-riftyellow mb-1">95%</div>
+              <div className="text-2xl md:text-4xl font-bold text-riftyellow mb-1">98%</div>
               <div className="text-white text-xs sm:text-sm">Client Satisfaction</div>
             </div>
           </div>

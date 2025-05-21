@@ -26,7 +26,7 @@ const Index = () => {
           >
             <Link to="/contact">
               <PhoneCall size={20} />
-              <span className="whitespace-nowrap">Contact Us Now</span>
+              <span className="whitespace-nowrap text-black">Contact Us Now</span>
             </Link>
           </Button>
         </div>
