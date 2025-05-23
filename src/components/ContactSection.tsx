@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,7 +51,7 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-6 w-6 text-riftyellow" />,
       title: "Phone Number",
-      details: ["+254 700 000000", "+254 711 000000"]
+      details: ["+254 704 694052"]
     },
     {
       icon: <Mail className="h-6 w-6 text-riftyellow" />,
