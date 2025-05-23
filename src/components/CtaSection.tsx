@@ -33,7 +33,7 @@ const CtaSection = () => {
               Request a Quote
             </Button>
             <Button 
-              className="w-full sm:w-auto border-riftyellow text-black bg-white hover:bg-gray-100 text-lg py-6 px-8"
+              className="btn-primary text-black bg-white hover:bg-gray-100 border-riftyellow text-lg py-6 px-8"
               asChild
             >
               <Link to="/projects">View Our Portfolio</Link>
