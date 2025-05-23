@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CtaSection = () => {
   return (
@@ -31,8 +32,11 @@ const CtaSection = () => {
             <Button className="btn-primary text-lg py-6 px-8">
               Request a Quote
             </Button>
-            <Button variant="outline" className="text-white border-white hover:bg-white/10 text-lg py-6 px-8">
-              View Our Portfolio
+            <Button 
+              className="w-full sm:w-auto border-riftyellow text-black bg-white hover:bg-gray-100 text-lg py-6 px-8"
+              asChild
+            >
+              <Link to="/projects">View Our Portfolio</Link>
             </Button>
           </div>
         </div>
