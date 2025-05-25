@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Check, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -24,30 +25,49 @@ const Contact = () => {
     setFormState(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-contact', {
+        body: formState
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data?.success) {
+        toast({
+          title: "Message Sent!",
+          description: (
+            <div className="flex items-center">
+              <Check className="h-4 w-4 mr-2" />
+              {data.message}
+            </div>
+          ),
+        });
+        setFormState({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        throw new Error(data?.error || 'Failed to send message');
+      }
+    } catch (error: any) {
+      console.error('Error submitting contact form:', error);
       toast({
-        title: "Message Sent!",
-        description: (
-          <div className="flex items-center">
-            <Check className="h-4 w-4 mr-2" />
-            We've received your message and will get back to you soon.
-          </div>
-        ),
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
       });
-      setFormState({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
