@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -18,7 +17,7 @@ const Projects = () => {
       category: "Residential",
       location: "Eldoret",
       year: "2023",
-      image: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070",
+      image: "https://i.ibb.co/DfvH772g/IMG-20250310-WA0006.jpg",
       description: "A collection of high-end residential villas featuring modern architecture and premium finishes."
     },
     {
@@ -261,7 +260,7 @@ const Projects = () => {
                 
                 <div className="grid grid-cols-2 gap-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071" 
+                    src="https://i.ibb.co/DfvH772g/IMG-20250310-WA0006.jpg" 
                     alt="Luxury Villa Exterior" 
                     className="rounded-lg shadow-lg h-48 md:h-64 w-full object-cover"
                   />

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ const ProjectsSection = () => {
       id: 1,
       title: "Luxury Villa Complex",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070",
+      image: "https://i.ibb.co/DfvH772g/IMG-20250310-WA0006.jpg",
       description: "A collection of high-end residential villas featuring modern architecture and premium finishes.",
       extendedDescription: "This exclusive development includes 12 custom villas, each with unique floor plans ranging from 3 to 5 bedrooms. The project incorporated sustainable building materials, energy-efficient systems, and smart home technology throughout. Our team managed everything from site preparation to interior finishes."
     },
