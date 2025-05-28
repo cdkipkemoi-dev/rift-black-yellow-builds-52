@@ -93,7 +93,7 @@ const About = () => {
                   className="rounded-lg shadow-md h-64 object-cover w-full"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb73?q=80&w=2070" 
+                  src="https://i.ibb.co/dTXWspy/1000049867.png" 
                   alt="RiftWorkmanship Construction Team" 
                   className="rounded-lg shadow-md h-64 object-cover w-full mt-8"
                 />
