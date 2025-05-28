@@ -111,7 +111,7 @@ const Services = () => {
         "Permit preparation and submission",
         "Sustainable and energy-efficient design"
       ],
-      image: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?q=80&w=2070"
+      image: "https://i.ibb.co/ymvyV7bs/IMG-20250526-WA0019.jpg"
     }
   ];
 
