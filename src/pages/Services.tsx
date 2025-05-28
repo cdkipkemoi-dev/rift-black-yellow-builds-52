@@ -47,7 +47,7 @@ const Services = () => {
         "Integrated technology and smart home features",
         "Comprehensive warranties on all work"
       ],
-      image: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070"
+      image: "https://i.ibb.co/TyNxtTp/IMG-20250526-WA0018.jpg"
     },
     {
       id: 3,
@@ -63,7 +63,7 @@ const Services = () => {
         "Tenant improvements and build-outs",
         "Compliance with all commercial building codes"
       ],
-      image: "https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=2070"
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
     },
     {
       id: 4,
