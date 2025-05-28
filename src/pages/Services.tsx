@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -32,7 +31,7 @@ const Services = () => {
         "Quality assurance and control",
         "Risk assessment and mitigation"
       ],
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
+      image: "https://i.ibb.co/sdsQRmh6/IMG-20250526-WA0022-1.jpg"
     },
     {
       id: 2,
