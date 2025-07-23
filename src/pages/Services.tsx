@@ -95,7 +95,7 @@ const Services = () => {
         "Outdoor living spaces and kitchens",
         "Commercial and residential landscaping"
       ],
-      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2070"
+      image: "https://i.ibb.co/TDXq2cbC/istockphoto-483785475-612x612.jpg"
     },
     {
       id: 6,
@@ -379,7 +379,7 @@ const Services = () => {
                 <div className="relative flex flex-col md:flex-row items-center">
                   <div className="flex-1 md:text-right md:pr-12 mb-6 md:mb-0 md:order-2">
                     <img 
-                      src="https://images.unsplash.com/photo-1469389335181-2198b4d10abd?q=80&w=2068" 
+                      src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2126" 
                       alt="Project Completion" 
                       className="rounded-lg shadow-md h-40 object-cover w-full"
                     />
