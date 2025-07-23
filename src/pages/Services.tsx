@@ -379,10 +379,10 @@ const Services = () => {
                 <div className="relative flex flex-col md:flex-row items-center">
                   <div className="flex-1 md:text-right md:pr-12 mb-6 md:mb-0 md:order-2">
                     <img 
-                      src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2126" 
-                      alt="Project Completion" 
-                      className="rounded-lg shadow-md h-40 object-cover w-full"
-                    />
+  src="https://i.ibb.co/tw5sLYkY/images.jpg" 
+  alt="Project Completion" 
+  className="rounded-lg shadow-md h-40 object-cover w-full"
+/>
                   </div>
                   
                   <div className="hidden md:flex h-12 w-12 rounded-full bg-riftyellow text-black font-bold items-center justify-center relative z-10">
