@@ -91,7 +91,7 @@ For inquiries about the website or our services, reach out to us:
 - **Location**: Eldoret, Kenya
 - **Working Hours**: Monday–Friday: 8:00 AM–6:00 PM, Saturday: 8:00 AM–1:00 PM
 
-Visit the live website at [insert live URL here, if available] or submit a message via the contact form.
+Visit the live website at [https://riftworkmanship.com/] or submit a message via the contact form.
 
 ## License
 © 2025 RiftWorkmanship Limited. All rights reserved.
