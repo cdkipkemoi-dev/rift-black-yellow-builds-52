@@ -95,7 +95,7 @@ const Services = () => {
         "Outdoor living spaces and kitchens",
         "Commercial and residential landscaping"
       ],
-      image: "https://i.ibb.co/xqVLYzYG/IMG-20250723-WA0012.jpg"
+      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2070"
     },
     {
       id: 6,
