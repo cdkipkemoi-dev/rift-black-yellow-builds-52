@@ -63,7 +63,7 @@ const Services = () => {
         "Tenant improvements and build-outs",
         "Compliance with all commercial building codes"
       ],
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
+      image: "https://i.ibb.co/rKz4s0Yv/IMG-20250723-WA0009.jpg"
     },
     {
       id: 4,
