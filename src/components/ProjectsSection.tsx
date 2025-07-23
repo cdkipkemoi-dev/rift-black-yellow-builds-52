@@ -37,7 +37,7 @@ const ProjectsSection = () => {
       id: 4,
       title: "Garden Complex Design",
       category: "Design",
-      image: "https://i.ibb.co/xqVLYzYG/IMG-20250723-WA0012.jpg",
+      image: "https://images.unsplash.com/photo-1558521558-037f1cb027c5?q=80&w=2070",
       description: "Comprehensive landscape architecture for a community garden and recreational space.",
       extendedDescription: "This community garden project transformed an unused urban lot into a vibrant public space with raised garden beds, walking paths, seating areas, and a children's play zone. The design incorporated native plants, efficient irrigation systems, and solar lighting to create a sustainable community asset."
     },
@@ -45,7 +45,7 @@ const ProjectsSection = () => {
       id: 5,
       title: "Modern Apartment Building",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=2070",
+      image: "https://i.ibb.co/xqVLYzYG/IMG-20250723-WA0012.jpg",
       description: "Contemporary multi-family housing with sustainable features and community amenities.",
       extendedDescription: "This 24-unit apartment complex prioritizes community living with shared amenities including a rooftop garden, fitness center, and co-working spaces. The building utilizes passive solar design, rainwater collection, and energy-efficient systems throughout. Each unit features modern finishes, open floor plans, and private balconies."
     },

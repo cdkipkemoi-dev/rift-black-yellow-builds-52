@@ -44,7 +44,7 @@ const Projects = () => {
       category: "Design",
       location: "Eldoret",
       year: "2022",
-      image: "https://i.ibb.co/xqVLYzYG/IMG-20250723-WA0012.jpg",
+      image: "https://images.unsplash.com/photo-1558521558-037f1cb027c5?q=80&w=2070",
       description: "Comprehensive landscape architecture for a community garden and recreational space."
     },
     {
@@ -53,7 +53,7 @@ const Projects = () => {
       category: "Residential",
       location: "Eldoret",
       year: "2021",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073",
+      image: "https://i.ibb.co/xqVLYzYG/IMG-20250723-WA0012.jpg",
       description: "Contemporary multi-family housing with sustainable features and community amenities."
     },
     {
