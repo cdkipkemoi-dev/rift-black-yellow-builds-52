@@ -79,7 +79,7 @@ const Services = () => {
         "Structural modifications and repairs",
         "Interior and exterior upgrades"
       ],
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070"
+      image: "https://i.ibb.co/5W5CJq76/IMG-20250723-WA0006.jpg"
     },
     {
       id: 5,
