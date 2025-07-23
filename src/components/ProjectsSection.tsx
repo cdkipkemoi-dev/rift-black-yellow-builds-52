@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       id: 3,
       title: "Historic Home Renovation",
       category: "Renovation",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070",
+      image: "https://i.ibb.co/gZwfrgB2/IMG-20250723-WA0018.jpg",
       description: "Careful restoration of a heritage property, preserving historical elements while adding modern amenities.",
       extendedDescription: "This heritage home renovation required careful preservation of original architectural features while incorporating modern systems and conveniences. We worked with conservation specialists to restore intricate woodwork, refurbish original windows, and recreate period-appropriate details while adding modern plumbing, electrical, and climate control systems."
     },
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
       id: 4,
       title: "Garden Complex Design",
       category: "Design",
-      image: "https://images.unsplash.com/photo-1558521558-037f1cb027c5?q=80&w=2070",
+      image: "https://i.ibb.co/xqVLYzYG/IMG-20250723-WA0012.jpg",
       description: "Comprehensive landscape architecture for a community garden and recreational space.",
       extendedDescription: "This community garden project transformed an unused urban lot into a vibrant public space with raised garden beds, walking paths, seating areas, and a children's play zone. The design incorporated native plants, efficient irrigation systems, and solar lighting to create a sustainable community asset."
     },
